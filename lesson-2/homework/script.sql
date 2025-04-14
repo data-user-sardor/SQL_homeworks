@@ -29,7 +29,7 @@ CREATE TABLE TestTable (
 );
 select * from TestTable
 INSERT INTO TestTable (ID, Name) VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Charlie');
-DELETE FROM TestTable;
+DELETE FROM TestTable
 WHERE ID = 2;
 TRUNCATE TABLE TestTable;
 DROP TABLE TestTable;
