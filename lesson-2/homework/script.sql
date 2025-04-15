@@ -31,10 +31,11 @@ select * from TestTable
 INSERT INTO TestTable (ID, Name) VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Charlie');
 DELETE FROM TestTable
 WHERE ID = 2;
+select * from TestTable;
 TRUNCATE TABLE TestTable;
+select * from TestTable;
 DROP TABLE TestTable;
-select * from TestTable
-select * from TestTable
+select * from TestTable;
 --6
 ALTER TABLE Employees
 ALTER COLUMN Name VARCHAR(100);
@@ -57,17 +58,6 @@ select * from Departments
 TRUNCATE TABLE Employees;
 select * from Employees
 --11
-CREATE TABLE OldDepartments (
-DepartmentID INT PRIMARY KEY,
-DepartmentName VARCHAR(50));
-INSERT INTO oldDepartments (DepartmentID, DepartmentName)
-VALUES 
-    (1, 'Human Resources'),
-    (2, 'Finance'),
-    (3, 'Marketing'),
-    (4, 'IT'),
-    (5, 'Sales');
-	select * from OldDepartments
 INSERT INTO Departments (DepartmentID, DepartmentName)
 SELECT TOP 5 DepartmentID, DepartmentName
 FROM OldDepartments;
@@ -123,13 +113,13 @@ SELECT * INTO Products_Backup
 FROM Products;
 select * from Products_Backup
 --23
-EXEC sp_rename 'Products_Backup', 'Inventory1';
-select * from Inventory1
+EXEC sp_rename 'Products_Backup', 'Inventory';
+select * from Inventory
 --24
-ALTER TABLE Inventory1
+ALTER TABLE Inventory
 ALTER COLUMN Price FLOAT;
-select * from Inventory1
+select * from Inventory
 --25
-ALTER TABLE Inventory1
+ALTER TABLE Inventory
 ADD ProductCode INT IDENTITY(1000, 5);
-select * from Inventory1
+select * from Inventory
