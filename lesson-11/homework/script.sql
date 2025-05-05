@@ -186,18 +186,6 @@ JOIN Departments AS D
 ON E.DepartmentID = D.DepartmentID
 WHERE 
     D.DepartmentName IN ('Human Resources', 'Finance')
-    OR (
-        LEN(LOWER(E.Name)) 
-        - LEN(REPLACE(LOWER(E.Name), 'a', ''))
-        + LEN(LOWER(E.Name)) 
-        - LEN(REPLACE(LOWER(E.Name), 'e', ''))
-        + LEN(LOWER(E.Name)) 
-        - LEN(REPLACE(LOWER(E.Name), 'i', ''))
-        + LEN(LOWER(E.Name)) 
-        - LEN(REPLACE(LOWER(E.Name), 'o', ''))
-        + LEN(LOWER(E.Name)) 
-        - LEN(REPLACE(LOWER(E.Name), 'u', ''))
-    ) >= 4;
 
 --19-task:Show employees who are in the Sales or Marketing department and have a salary above 60000.
 SELECT 
