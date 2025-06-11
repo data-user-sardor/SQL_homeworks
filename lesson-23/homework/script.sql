@@ -278,7 +278,7 @@ VALUES
 
 SELECT DISTINCT p.ProductID, p.ProductName, p.Category, p.SellingPrice
 FROM Products p
-JOIN Sales s ON p.ProductID = s.ProductID;
+JOIN Sales s ON p.ProductName = s.Product;
 
 --22 Find the most expensive product in the Products table
 SELECT ProductID, ProductName, Category, SellingPrice
